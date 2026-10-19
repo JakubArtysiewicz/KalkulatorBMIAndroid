@@ -5,15 +5,108 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1B1B1B"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textView"
+        android:layout_width="409dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="4dp"
+        android:background="#36AEB3"
+        android:paddingStart="45px"
+        android:paddingTop="25px"
+        android:text="Kalkulator BMI"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="52dp"
+        android:text="Oblicz swoje BMI:"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:hint="Waga(kg)"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="1dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/kg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Np. 60 kg"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:hint="Wzrost(cm)"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        tools:layout_editor_absoluteX="1dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="np 100"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="140dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#36AEB3"
+        android:text="Oblicz"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="30px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="409dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="32dp"
+        android:scrollbarSize="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/wynik"
+        android:layout_width="223dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.example.kalkulatorbmi
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +13,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        findViewById<Button>(R.id.button).setOnClickListener {
+            val waga = findViewById<TextView>(R.id.kg).text.toString().toDouble()
+            val wzrost = findViewById<TextView>(R.id.cm).text.toString().toDouble() / 100
+
+            val wynik = waga / (wzrost * wzrost)
+
+            findViewById<TextView>(R.id.wynik).text =
+                String.format("%.2f", wynik)
         }
+
     }
 }
